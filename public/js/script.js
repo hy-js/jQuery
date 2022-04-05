@@ -27,8 +27,6 @@ $.ajax({
         parseInt(consolidated_weather[0].the_temp) +
         " degrees </strong> today</p>"
     );
-    //  TODO: add icons
-    // https://www.metaweather.com/api/#location
     $("#weather").append(
       "<p><strong>" +
         consolidated_weather[0].weather_state_name +
@@ -65,8 +63,10 @@ $.getJSON(`${BASE_URL}${API_KEY}`)
     results.forEach((movie) => {
       $("#movies").append(
         `
-        <h1>${movie.title}</h1>
-        <img src="${IMAGE_URL}${movie.poster_path}" />
+        <div class="col s12 m4 l3">
+          <h4 class="truncate">${movie.title}</h4>
+          <img src="${IMAGE_URL}${movie.poster_path}" class="responsive-img" />
+        </div>
         `
       );
     });
