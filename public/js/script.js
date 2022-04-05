@@ -53,6 +53,7 @@ let BASE_URL = "https://api.themoviedb.org/3/discover/movie";
 let IMAGE_URL = "https://image.tmdb.org/t/p/w300/";
 let API_KEY = "?api_key=12890aac4bd3d481725b4e373193a5bf&";
 
+$("#movies").hide();
 $.getJSON(`${BASE_URL}${API_KEY}`)
   .then((data) => {
     // console.log(data);
@@ -70,6 +71,10 @@ $.getJSON(`${BASE_URL}${API_KEY}`)
         `
       );
     });
+    // Show movies
+    // Progress Progress
+    $(".preloader-wrapper").hide();
+    $("#movies").show();
   })
 
   .catch((err) => {
