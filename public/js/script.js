@@ -2,18 +2,18 @@ console.log("Connected");
 
 $("h1").css("color", "teal");
 
+
+
+// Weather -------------------------------
 $("#weather").css("border", "1px solid black");
 
 // Hide weather
 // Show Progress
 $("#weather").hide();
-
-// Weather -----------------
 $.ajax({
   url: "https://www.metaweather.com/api/location/1103816/",
   success: (data) => {
     const { consolidated_weather } = data;
-    console.log(consolidated_weather);
     $("#weather").append(
       `
       <div id="icon">
@@ -49,3 +49,29 @@ $.ajax({
     $("#weather").show();
   }
 });
+
+// Movies -------------------------------
+let BASE_URL = "https://api.themoviedb.org/3/discover/movie";
+let IMAGE_URL = "https://image.tmdb.org/t/p/w300/";
+let API_KEY = "?api_key=12890aac4bd3d481725b4e373193a5bf&";
+
+$.getJSON(`${BASE_URL}${API_KEY}`)
+  .then((data) => {
+    // console.log(data);
+    // const results = data.results
+    const { results } = data;
+    const { page } = data;
+    console.log(results);
+    results.forEach((movie) => {
+      $("#movies").append(
+        `
+        <h1>${movie.title}</h1>
+        <img src="${IMAGE_URL}${movie.poster_path}" />
+        `
+      );
+    });
+  })
+
+  .catch((err) => {
+    console.log(err);
+  });
