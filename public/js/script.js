@@ -12,26 +12,26 @@ $("#weather").hide();
 $.ajax({
   url: "https://www.metaweather.com/api/location/1103816/",
   success: (data) => {
-    const { consolidated_weather } = data;
-    console.log(consolidated_weather);
+    const { consolidated_weather: weather } = data;
+    console.log(weather);
     $("#weather").append(
       `
       <div id="icon">
-      <img src="https://www.metaweather.com/static/img/weather/${consolidated_weather[0].weather_state_abbr}.svg"/>
+      <img src="https://www.metaweather.com/static/img/weather/${weather[0].weather_state_abbr}.svg"/>
       </div>
       <h3>Weather in <strong>${data.title}</strong></h3>
       `
     );
     $("#weather").append(
       "<p><strong>" +
-        parseInt(consolidated_weather[0].the_temp) +
+        parseInt(weather[0].the_temp) +
         " degrees </strong> today</p>"
     );
     //  TODO: add icons
     // https://www.metaweather.com/api/#location
     $("#weather").append(
       "<p><strong>" +
-        consolidated_weather[0].weather_state_name +
+        weather[0].weather_state_name +
         `</strong> are forecast</p>
         `
     );
