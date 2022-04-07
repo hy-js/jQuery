@@ -1,0 +1,27 @@
+<%- include('../partials/head.ejs') %>
+<body>
+ <%- include('../partials/nav.ejs') %>
+    <div class="container">
+      <h1>Movie Page</h1>
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      <div id="movies" class="row">
+
+      </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <!-- Our JavaScript -->
+    <!-- Our JavaScript -->
+    <script src="/js/apiConfig.js"></script>
+    <script src="/js/movies.js"></script>
+  </body>
+</html>

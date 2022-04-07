@@ -1,0 +1,36 @@
+:root {
+   --main-color: teal;
+ }
+
+
+h1 {
+   color: var(--main-color);
+}
+
+#weather {
+   padding: 1em;
+   background-color: white;
+   object-fit: contain;
+}
+
+#icon {
+   width: 50%;
+}
+
+.movie-container {
+   height: 550px;
+   /* width: 100%;
+   object-fit: contain;
+   text-align: center; */
+}
+
+.movie-container img {
+   height: 440px;
+   transition: transform 0.2s;
+
+}
+
+
+.movie-container img:hover {
+   transform: scale(1.1);
+}
