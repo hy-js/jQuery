@@ -1,0 +1,37 @@
+<%- include('../partials/head.ejs') %>
+<body>
+ <%- include('../partials/nav.ejs') %>
+    <div class="container">
+      <h1 id="title"></h1>
+      <div class="row">
+        <div id="poster" class="col s5"></div>
+        <div class="col s5">
+          <h4 id="year"></h4>
+          <p id="synopsis"></p>
+          <div id="comments">
+            <form id="comment-form" method="POST" action="/movies/">
+              <div class="input-field col s6">
+                <input id="comment" type="text" name="comment" />
+                <label class="active" for="comment">Write comment here:</label>
+                <button
+                  class="btn waves-effect waves-light left-align"
+                  type="submit"
+                  name="action"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <script>
+      const movie_id = <%= movie_id %>
+    </script>
+    <!-- Our JavaScript -->
+    <script src="/js/apiConfig.js"></script>
+    <script src="/js/singleMovie.js"></script>
+  </body>
+</html>
