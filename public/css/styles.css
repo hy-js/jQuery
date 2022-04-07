@@ -1,0 +1,12 @@
+h1 {
+   color: blue;
+}
+
+#weather {
+   padding: 1em;
+   background-color: white;
+}
+
+#icon {
+   width: 50%;
+}
