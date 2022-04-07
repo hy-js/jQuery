@@ -11,7 +11,7 @@
 - [x] Practice some coding challenges and Quokka introduction
 - [x] Finish our LOTR task
 - [x] Create a single movie page
-- [] Adding an express server
+- [x] Adding an express server
 Why we need an express server:
 - 1. Show specific movies on their own routes
 - 2. Use dynamic web pages with EJS
@@ -20,6 +20,10 @@ Why we need an express server:
 
 
 ### Week 10: DAY 0
+- [] Learn axios
+- [] Create Database
+- [] Search Function
+- [] PAges
 - [] Create a todo list with jquery
 
 -------------------------------------
