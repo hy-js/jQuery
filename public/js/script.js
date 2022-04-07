@@ -1,6 +1,14 @@
 // Weather -------------------------------
 $("#weather").css("border", "1px solid black");
 
+<<<<<<< Updated upstream
+=======
+// cors anywhere
+// Use proxy if you get a cors error
+var myUrl = 'http://www.metaweather.com/api/location/1103816/';
+var proxy = 'https://cors-anywhere.herokuapp.com/';
+
+>>>>>>> Stashed changes
 // Hide weather
 // Show Progress
 $("#weather").hide();
@@ -27,14 +35,6 @@ $.ajax({
         `</strong> are forecast</p>
         `
     );
-    //  weather.forEach((day, index) => {
-    //    $("#weather").append(
-    //      `<p>
-    //      Day ${index}: ${parseInt(day.the_temp)} degrees
-    //       </p>`
-    //    );
-    //  });
-
     // Show weather
     // Progress Progress
     $(".progress").hide();
