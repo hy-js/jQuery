@@ -1,20 +1,11 @@
 // Weather -------------------------------
 $("#weather").css("border", "1px solid black");
-
-<<<<<<< Updated upstream
-=======
-// cors anywhere
-// Use proxy if you get a cors error
-var myUrl = 'http://www.metaweather.com/api/location/1103816/';
-var proxy = 'https://cors-anywhere.herokuapp.com/';
-
->>>>>>> Stashed changes
 // Hide weather
 // Show Progress
 $("#weather").hide();
-$.ajax({
-  url: "https://www.metaweather.com/api/location/1103816/",
-  success: (data) => {
+fetch("http://localhost:3000/api/weather")
+  .then((response) => response.json())
+  .then((data) => {
     const { consolidated_weather: weather } = data;
     $("#weather").append(
       `
@@ -39,5 +30,4 @@ $.ajax({
     // Progress Progress
     $(".progress").hide();
     $("#weather").show();
-  }
-});
+  });

@@ -19,15 +19,15 @@ Why we need an express server:
 - 3. Hide our API key from the frontend user
 
 ### Week 10: DAY 0
+- [] Fix our weather query
 - [] Learn axios
 - [] Create Database
-
 - [] Pages
-- [] Create a todo list with jquery
 
 ### Week 10: DAY 0
 - [] Search Function
 - [] Genre Function
+- [] Create a todo list with jquery
 
 -------------------------------------
 ## TODO
