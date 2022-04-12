@@ -6,18 +6,20 @@
     <div class="container">
       <h1><%= title %></h1>
       <main class="row">
-        <div class="col s4">
-          <img
-            src="/assets/welcome.svg"
-            alt="drawing of person waving in front of tree"
-          />
-        </div>
-        <div class="col s4">
-          <!-- image and weather content -->
-          <div class="progress">
-            <div class="indeterminate"></div>
+        <div id="welcome">
+          <div class="col s4" >
+            <img
+              src="/assets/welcome.svg"
+              alt="drawing of person waving in front of tree"
+            />
           </div>
-          <div id="weather"></div>
+          <div class="col s4">
+            <!-- image and weather content -->
+            <div class="progress">
+              <div class="indeterminate"></div>
+            </div>
+            <div id="weather"></div>
+          </div>
         </div>
       </main>
 
@@ -40,10 +42,10 @@
         </p>
       </div>
     </div>
+    <%- include('../partials/footer.ejs') %>
+    <!-- Our JavaScript -->
+    <script src="/js/weather.js"></script>
   </body>
-  <%- include('../partials/footer.ejs') %>
-  <!-- Our JavaScript -->
-<script src="/js/script.js"></script>
 
 
 </html>

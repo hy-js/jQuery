@@ -1,12 +1,14 @@
 <%- include('../partials/head.ejs') %>
 <body>
  <%- include('../partials/nav.ejs') %>
-    <div class="container">
+    <div class="container" id="movie-details">
       <h1 id="title"></h1>
+      <h5 id="tagline"></h5>
       <div class="row">
         <div id="poster" class="col s5"></div>
-        <div class="col s5">
+        <div class="col s5" id="details">
           <h4 id="year"></h4>
+          <div id="genres"></div>
           <p id="synopsis"></p>
           <div id="comments">
             <form id="comment-form" method="POST" action="/movies/">
@@ -28,10 +30,10 @@
     </div>
     <%- include('../partials/footer.ejs') %>
     <script>
+      // this may display as an error in VSCode, please visit here for bug details: https://github.com/microsoft/vscode/issues/51118
       const id = <%= movie_id %>
     </script>
     <!-- Our JavaScript -->
-    <script src="/js/apiConfig.js"></script>
     <script src="/js/singleMovie.js"></script>
   </body>
 </html>

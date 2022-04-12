@@ -3,18 +3,16 @@ const router = express.Router();
 const axios = require("axios");
 
 // GET home page
-
-// @path /api/weather
-// @desc access metaweather
+// @path /api/all-movies
+// @desc access TMDB server
 // @acces public
-
 // Our api
 router.get("/", (req, res, next) => {
-  // Metaweather API
+  // TMDB api: https://api.themoviedb.org/3/discover/movie
   axios
-    .get("http://www.metaweather.com/api/location/44418/")
-    .then(({ data }) => {
-      res.send(data);
+    .get("discover/movie")
+    .then((response) => {
+      res.send(response.data);
     })
     .catch((err) => {
       console.log(err);

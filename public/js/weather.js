@@ -3,7 +3,7 @@ $("#weather").css("border", "1px solid black");
 // Hide weather
 // Show Progress
 $("#weather").hide();
-fetch("http://localhost:3000/api/weather")
+fetch("/api/weather")
   .then((response) => response.json())
   .then((data) => {
     const { consolidated_weather: weather } = data;
@@ -31,3 +31,23 @@ fetch("http://localhost:3000/api/weather")
     $(".progress").hide();
     $("#weather").show();
   });
+
+// fetch("/api/weather")
+// .then((response) => response.json())
+// .then((data) => {
+//   const { consolidated_weather: weather } = data;
+//   const html = `
+//   <div id="icon">
+//     <img src="https://www.metaweather.com/static/img/weather/${weather[0].weather_state_abbr}.svg"/>
+//   </div>
+//   <h3>Weather in <strong>${data.title}</strong></h3>
+//   <p><strong>${weather[0].the_temp} degrees </strong> today</p>
+//   <p><strong> ${weather[0].weather_state_name} </strong> are forecast</p>
+//   `
+//   ("#weather").append(html);
+
+//   // Show weather
+//   // Progress Progress
+//   $(".progress").hide();
+//   $("#weather").fadeIn();
+// });

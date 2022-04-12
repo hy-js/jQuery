@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
@@ -9,7 +10,12 @@ app.use(morgan("dev"));
 const path = require("path");
 
 // Axios
-const axios = require('axios');
+const axios = require("axios");
+axios.defaults.baseURL = "https://api.themoviedb.org/3/";
+axios.defaults.params = {
+  api_key: process.env.TMDB_API_KEY,
+  include_adult: false
+};
 
 // Body parser
 app.use(express.urlencoded({ extended: true }));
@@ -29,9 +35,9 @@ const movieRouter = require("./routes/movies");
 app.use("/movies", movieRouter);
 
 // API routes
-const weatherAPI = require("./routes/api/weatherAPI");
-app.use("/api/weather", weatherAPI);
-
+app.use("/api/weather", require("./routes/api/weatherAPI"));
+app.use("/api/all-movies", require("./routes/api/allMoviesAPI"));
+app.use("/api/single-movie", require("./routes/api/singleMovieAPI"));
 
 app.listen(port, () => {
   console.log(`Example app listening on http://localhost:${port}/`);
