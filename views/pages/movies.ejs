@@ -3,6 +3,15 @@
  <%- include('../partials/nav.ejs') %>
     <div class="container">
       <h1>Movie Page</h1>
+
+      <a class="waves-effect waves-light btn" id="random">Random page</a>
+      <ul class="pagination">
+        <li class="waves-effect" id="prevPage"><a href="#!"><</a></li>
+        <li class="active teal" ><a href="#!" id="page-number">1</a></li>
+        <li class="waves-effect" id="nextPage"><a href="#!">></a></li>
+      </ul>
+
+
       <div class="input-field col s12">
         <select id="sort">
           <option value="" disabled selected>Choose your option</option>
@@ -12,6 +21,7 @@
         </select>
         <label>Sort function</label>
       </div>
+
       <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
           <div class="circle-clipper left">
