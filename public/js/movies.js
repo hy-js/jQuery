@@ -1,6 +1,7 @@
+let IMAGE_URL = "http://image.tmdb.org/t/p/w500";
 // Movies -------------------------------
 $("#movies").hide();
-$.getJSON(BASE_URL + "/discover/movie", apiOptions)
+$.getJSON("/api/all-movies")
   .then((data) => {
     // console.log(data);
     // const results = data.results
