@@ -12,7 +12,7 @@ const axios = require("axios");
 router.get("/", (req, res, next) => {
   // Metaweather API
   axios
-    .get("http://www.metaweather.com/api/location/44418/")
+    .get("http://www.metaweather.com/api/location/1103816/")
     .then(({ data }) => {
       res.send(data);
     })
