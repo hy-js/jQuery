@@ -12,7 +12,6 @@
 - [] Finish our LOTR task
 - [x] Create a single movie page
 - [x] Adding an express server
-
 Why we need an express server:
 - 1. Show specific movies on their own routes
 - 2. Use dynamic web pages with EJS
