@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("../database");
 
 // GET Search Function
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
   res.render("pages/search", {
     title: "Search"
   });

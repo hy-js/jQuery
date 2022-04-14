@@ -96,9 +96,11 @@ function renderPages(results) {
       <a href="/movies/${movie.id}">
         <h3>${movie.title}</h3>
         </a>
-        <div class="chip">
-        ${movie.vote_average}
-      </div>
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
+          <div class="chip">
+          ${movie.vote_average}
+          </div>
+        </a>
         <h5>${movie.overview}</h5>
       </div>
   </div>
