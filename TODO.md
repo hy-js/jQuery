@@ -18,10 +18,10 @@ Why we need an express server:
 - 3. Hide our API key from the frontend user
 
 ### Week 10: DAY 0
-- [] Fix our weather query
-- [] Learn axios
-- [] Create Database
-- [] Pages
+- [x] Fix our weather query
+- [x] Learn axios
+- [x] Create Database
+- [x] Pages
 
 ### Week 10: DAY 0
 - [] Search Function
