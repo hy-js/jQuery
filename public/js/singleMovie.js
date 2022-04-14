@@ -24,6 +24,8 @@ $.getJSON("/api/single-movie/" + id)
     console.log(err);
   })
   .then(() => {
+    $(".progress").hide();
+    $("#movie-details").removeClass("hide");
     $("#movie-details").fadeIn();
   });
 

@@ -9,7 +9,7 @@
 
 ### Week 9: DAY 1
 - [x] Practice some coding challenges and Quokka introduction
-- [] Finish our LOTR task
+- [x] Finish our LOTR task
 - [x] Create a single movie page
 - [x] Adding an express server
 Why we need an express server:
@@ -24,29 +24,29 @@ Why we need an express server:
 - [x] Pages
 
 ### Week 10: DAY 0
-- [] Search Function
+- [x] Search Function
 - [] Genre Function
 - [] Create a todo list with jquery
 
 -------------------------------------
 ## TODO
 #### Step 1
-- [] Create DB
+- [x] Create DB
 
 #### Step 2
 - [x] Understand the API
 #### Step 3
 - [x] Navbar
 - [x] Display 20 movies
-- [] Search
+- [x] Search
 - [] List genre
-- [] Pages
+- [x] Pages
 #### Step 4
 - [] Create Login (take from project 4)
 - [] Hide elements if not logged in
 #### Step 5
 - [x] Details Page
-- [ ] Create ratings fonction
+- [x ] Create comments function
 
 #### Style
 

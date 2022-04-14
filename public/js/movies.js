@@ -1,6 +1,6 @@
 let IMAGE_URL = "http://image.tmdb.org/t/p/w500";
 let page = 1;
-let sort = "most-popular";
+let sort = "popularity.desc";
 
 // On load
 $(document).ready(function () {
@@ -27,16 +27,16 @@ $("#prevPage").click(() => {
 
 // KEYPRESS PAGINATION - TODO:
 // next page
-$(document).keypress(function (e) {
-  if (e.which == "ArrowRight") {
+$(document).keydown(function (e) {
+  if (e.which == "39") {
     console.log("right");
     page++;
     getMovies(page);
   }
 });
 // prev page
-$(document).keypress(function (e) {
-  if (e.which == "ArrowLeft") {
+$(document).keydown(function (e) {
+  if (e.which == "37") {
     console.log("left");
     page--;
     getMovies(page);
@@ -80,9 +80,9 @@ function renderPages(results) {
   results.forEach((movie) => {
     const html = `
   <div class="col s12 m4 l3 movie-container">
-  <a href="/movies/${movie.id}">
-  <img src="${IMAGE_URL}${movie.poster_path}" class="responsive-img" alt="${movie.title}"/>
-  </a>
+    <a href="/movies/${movie.id}">
+    <img src="${IMAGE_URL}${movie.poster_path}" class="responsive-img" alt="${movie.title}"/>
+    </a>
   </div>
     `;
     $("#movies").append(html);
@@ -92,3 +92,5 @@ function renderPages(results) {
   $(".preloader-wrapper").hide();
   $("#movies").fadeIn();
 }
+
+
