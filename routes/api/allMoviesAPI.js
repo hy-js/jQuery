@@ -7,10 +7,12 @@ const axios = require("axios");
 // @desc access TMDB server
 // @acces public
 // Our api
-router.get("/", (req, res) => {
-  // TMDB api: https://api.themoviedb.org/3/discover/movie
+router.get("/most-popular/:page", (req, res) => {
+  // TMDB api: https://api.themoviedb.org/3/discover/movie?sort_by="popularity.desc"
   axios
-    .get("discover/movie")
+    .get("discover/movie", {
+      params: { page: req.params.page, sort_by: "popularity.desc" }
+    })
     .then((response) => {
       res.send(response.data);
     })
@@ -20,11 +22,17 @@ router.get("/", (req, res) => {
     });
 });
 
-// @path /api/all-movies/:page
-router.get("/:page", (req, res) => {
-  // TMDB api: https://api.themoviedb.org/3/discover/movie?page={page}
+// GET home page
+// @path /api/all-movies
+// @desc access TMDB server
+// @acces public
+// Our api
+router.get("/most-revenue/:page", (req, res) => {
+  // TMDB api: https://api.themoviedb.org/3/discover/movie?sort_by="revenue.desc"
   axios
-    .get("discover/movie", { params: { page: req.params.page } })
+    .get("discover/movie", {
+      params: { page: req.params.page, sort_by: "revenue.desc" }
+    })
     .then((response) => {
       res.send(response.data);
     })
