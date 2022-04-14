@@ -42,6 +42,7 @@ app.use("/api/all-movies", require("./routes/api/allMoviesAPI"));
 app.use("/api/single-movie", require("./routes/api/singleMovieAPI"));
 app.use("/api/search", require("./routes/api/searchAPI"));
 app.use("/api/genre", require("./routes/api/genreAPI"));
+app.use("/api/display", require("./routes/api/displayAPI"));
 
 app.listen(port, () => {
   console.log(`Example app listening on http://localhost:${port}/`);

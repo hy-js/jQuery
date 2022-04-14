@@ -14,10 +14,6 @@ h1, h2 {
   padding: .5em;
 }
 
-/* #rating {
-  border: 1px solid black;
-} */
-
 #weather {
   padding: 1em;
   background-color: white;
@@ -32,9 +28,6 @@ h1, h2 {
 
 .movie-container {
   height: 550px;
-  /* width: 100%;
-   object-fit: contain;
-   text-align: center; */
 }
 
 .movie-container img {

@@ -14,6 +14,7 @@
           <h4 id="year"></h4>
           <div id="genres"></div>
           <p id="synopsis"></p>
+          <hr />
             <div id ="comments">
               <form id="comment-form" method="POST" action="/movies/<%= movie_id %> ">
                 <div class="input-field col s6">
@@ -28,21 +29,21 @@
                   </button>
                 </div>
               </form>
+            </h4>
+            <div id="comment-body" class="col s5">
+              <p><u>Previous Comments:</u></p>
+              <% if (typeof comments != 'undefined') { %>
+                  <% const commentLimit = comments.length > 7 ? 7 : comments.length %>
+                  <% for (let i = 0; i < commentLimit; i++) { %>
+                    <div>
+                      <p><strong><%= comments[i].comment %></strong></p>
+                      <p><%= comments[i].created_at %></p>
+                    </div>
+                  <% } %>
+                <% } %>
             </div>
         </div>
 
-      <div id="comment-body" class="col s5">
-        <% if (typeof comments != 'undefined') { %>
-            <% const commentLimit = comments.length > 7 ? 7 : comments.length %>
-            <% for (let i = 0; i < commentLimit; i++) { %>
-              <div>
-                <p><strong><%= comments[i].comment %></strong></p>
-                <p><em>User: <%= comments[i].user_id %></em></p>
-                <p><%= comments[i].created_at %></p>
-              </div>
-            <% } %>
-          <% } %>
-      </div>
     </div>
     <%- include('../partials/footer.ejs') %>
     <script>

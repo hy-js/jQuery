@@ -1,61 +1,68 @@
 let GET_URL;
 let IMAGE_URL = "http://image.tmdb.org/t/p/w300";
 let sort = "most-popular";
+// Paramaters
 let page = 1;
 let query = "";
-let display = "now";
+let display = "";
 
 // On load
 $(document).ready(function () {
   $("select").formSelect();
   $(".progress").hide();
+  $(".fixed-action-btn").floatingActionButton();
+});
+
+// PAGINATION-------------------------------------
+// Pagination
+$("#nextPage").click(() => {
+  page++;
+  searchMovie(query, page);
 });
 
 // SEARCH FUNCTIONALITY ---------------------------
 $("#search").change((e) => {
   display = null;
-  console.log(e.target.value);
   query = e.target.value;
+  $("#movies").empty();
   searchMovie(query, page);
 });
 
-// ADD BUTTONS TO DISPLAY DIFFERENET OPTIONS
+// ADD BUTTONS TO DISPLAY DIFFERENT VIEWS ---------------------------
 $("#now-playing").click(() => {
   display = "now";
-  searchMovie(query, page, display);
+  $("#movies").empty();
+  $("#head").text("Now Playing");
+  searchMovie(page, display);
 });
 
 $("#upcoming").click(() => {
   display = "upcoming";
-  searchMovie(query, page, display);
+  $("#movies").empty();
+  $("#head").text("Upcoming");
+  searchMovie(page, display);
 });
 
 $("#top-rated").click(() => {
   display = "top";
-  searchMovie(query, page, display);
+  $("#movies").empty();
+  $("#head").text("Top");
+  searchMovie(page, display);
 });
 
-// PAGINATION -----------------------------------------
-$("#nextPage").click(() => {
-  console.log("next");
-  page++;
-  searchMovie(query, page, display);
-});
-
-// SEARCH MOVIE -----------------------------------------
-const searchMovie = (query, page, display) => {
+// MOVIE QUERIES -----------------------------------------
+const searchMovie = (query, page) => {
   if (display) {
-    GET_URL = `api/all-movies/${display}/${page}`;
-    console.log(GET_URL);
+    GET_URL = `/api/display/${display}/${page}`;
   } else {
     GET_URL = `/api/search/${query}/${page}`;
   }
   $.getJSON(GET_URL)
     .then((data) => {
+      $("#movies").hide();
       $(".progress").show();
-      // $("#movies").empty();
       const { results } = data;
-      console.log(data);
+      console.log(results);
       $("#total-results").html("Search Results: " + data.total_results);
       $("#nextPage").removeClass("hide");
       renderPages(results);
@@ -74,6 +81,7 @@ const searchMovie = (query, page, display) => {
       $("#movies").fadeIn();
     });
 };
+
 // RENDER MOVIES -----------------------------------------
 function renderPages(results) {
   results.forEach((movie) => {
@@ -88,7 +96,9 @@ function renderPages(results) {
       <a href="/movies/${movie.id}">
         <h3>${movie.title}</h3>
         </a>
-        <h4 id="rating">${movie.vote_average}</h4>
+        <div class="chip">
+        ${movie.vote_average}
+      </div>
         <h5>${movie.overview}</h5>
       </div>
   </div>
@@ -121,3 +131,5 @@ $.getJSON("/api/genre")
   .catch((err) => {
     console.log(err);
   });
+
+// TODO: add genre functionality
