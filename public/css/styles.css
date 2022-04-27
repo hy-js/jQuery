@@ -1,49 +1,54 @@
 :root {
-   --main-color: teal;
- }
+  --main-color: teal;
+}
 
- h1 {
-   color: var(--main-color);
- }
+h1, h2 {
+  color: var(--main-color);
+}
 
- #weather {
-   padding: 1em;
-   background-color: white;
-   object-fit: contain;
-   text-align: center;
- }
+.sidenav {
+ padding: 1em;
+}
 
- #icon {
-  width: 25%;
-  margin: 0 auto;
- }
+.buttons div {
+  padding: .5em;
+}
 
- .movie-container {
-   height: 550px;
-   /* width: 100%;
-    object-fit: contain;
-    text-align: center; */
- }
+#weather {
+  padding: 1em;
+  background-color: white;
+  object-fit: contain;
+  text-align: center;
+}
 
- .movie-container img {
-   height: 440px;
-   transition: transform 0.2s;
- }
+#icon {
+ width: 25%;
+ margin: 0 auto;
+}
 
- .movie-container img:hover {
-   transform: scale(1.1);
- }
+.movie-container {
+  height: 550px;
+}
 
- #welcome {
-    display: flex
- }
+.movie-container img {
+  height: 440px;
+  transition: transform 0.2s;
+}
 
- .sidenav form {
-   padding: 3em;
- }
+.movie-container img:hover {
+  transform: scale(1.1);
+}
+
+#welcome {
+   display: flex
+}
+
+.sidenav form {
+  padding: 3em;
+}
 
 #details{
-   background-color: rgba(255, 255, 255, 0.8);
-   border-radius: 5px;
-   border: 1px solid teal;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  border: 1px solid teal;
 }

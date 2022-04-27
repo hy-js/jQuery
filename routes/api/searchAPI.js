@@ -3,14 +3,17 @@ const router = express.Router();
 const axios = require("axios");
 
 // GET home page
-// @path /api/all-movies
+// @path /api/search/{query}
 // @desc access TMDB server
-// @access public
-router.get("/:sort/:page", (req, res) => {
-  // TMDB api: https://api.themoviedb.org/3/discover/movie?sort_by={sort}
+// @acces public
+// Our api
+// TODO:
+router.get("/:q/:page", (req, res) => {
+  // TMDB api: https://api.themoviedb.org/3/search/movie?query={q}
+  console.log(req.params);
   axios
-    .get("discover/movie", {
-      params: { page: req.params.page, sort_by: req.params.sort }
+    .get("/search/movie", {
+      params: { query: req.params.q, page: req.params.page }
     })
     .then((response) => {
       res.send(response.data);
